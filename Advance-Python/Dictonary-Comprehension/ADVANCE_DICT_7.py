@@ -3,3 +3,8 @@
 # create a dictionary where the key is the product name, and the value is the count of how many times that product was ordered.
 
 order = ['apple', 'banana', 'apple', 'orange', 'banana', 'banana']
+
+count_product_in_order = {
+    product:order.count(product) for product in order
+}
+print(count_product_in_order)

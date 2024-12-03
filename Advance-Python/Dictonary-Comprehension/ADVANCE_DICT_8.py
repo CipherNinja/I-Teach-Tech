@@ -9,3 +9,8 @@ role_permissions = {
     'editor': ['read', 'write'],
     'viewer': ['read']
 }
+
+filter_query = {
+    user:list(filter(lambda rol:rol[0]==role,role_permissions.items())) for (user,role) in users_roles
+}
+print(filter_query)

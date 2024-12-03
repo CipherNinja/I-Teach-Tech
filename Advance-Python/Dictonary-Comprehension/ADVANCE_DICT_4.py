@@ -7,3 +7,7 @@ users = [('john_doe', 'password123!'), ('alice_smith', '12345'), ('bob_jones', '
 # Function to check if password is strong
 def is_strong_password(password):
     return bool(re.match(r'^(?=.*\d)(?=.*[!@#$%^&*])[A-Za-z\d!@#$%^&*]{8,}$', password))
+
+
+select_query = {user:is_strong_password(password) for (user,password) in users}
+print(select_query)

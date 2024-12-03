@@ -10,3 +10,10 @@ users_last_login = {
     'alice_smith': '2024-09-01',
     'bob_jones': '2024-11-10'
 }
+
+today = datetime.today()
+
+select_query = { user:last_login for (user,last_login) in users_last_login.items() if today - datetime.strptime(last_login,'%Y-%m-%d') <= timedelta(days=30)}
+print(select_query)
+
+
