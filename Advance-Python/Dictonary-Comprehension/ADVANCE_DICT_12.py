@@ -13,3 +13,5 @@ users_password_reset = {
 
 # Get today's date
 today = datetime.today()
+
+# DIY

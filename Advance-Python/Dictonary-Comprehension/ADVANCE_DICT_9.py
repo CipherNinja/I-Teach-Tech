@@ -3,3 +3,8 @@
 # Create a dictionary that normalizes all usernames to lowercase.
 
 users = ['John_Doe', 'Alice_Smith', 'BOB_JONES']
+
+_query = {
+    username:username.lower() for username in users
+}
+print(_query)

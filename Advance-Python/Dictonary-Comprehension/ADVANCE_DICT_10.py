@@ -8,7 +8,11 @@ products = {
     'headphones': 100,
     'tablet': 300
 }
-
 # Price range filter
 min_price = 100
 max_price = 1000
+
+filter_product = {
+    product:price for (product,price) in products.items() if (price >= min_price and price <= max_price) 
+}
+print(filter_product)
