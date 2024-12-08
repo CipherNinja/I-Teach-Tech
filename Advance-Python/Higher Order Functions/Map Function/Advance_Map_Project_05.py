@@ -49,4 +49,10 @@ celestial_objects = [
     {"name": "Triangulum Galaxy", "type": "Galaxy", "distance_from_earth": 2992000.0},
 ]
 
-convert_to_trillion_km = [print(data) for data in map(lambda bodies: {**bodies, "distance_from_earth":str(bodies["distance_from_earth"]*9.461*(10**12))+" Trillion Kilometers"},celestial_objects)]
+convert_to_trillion_km = [data for data in map(lambda bodies: {**bodies, "distance_from_earth":str(bodies["distance_from_earth"]*9.461*(10**12))+" Trillion Kilometers"},celestial_objects)]
+
+
+# Print the result
+for obj in convert_to_trillion_km:
+    print(f"\033[33m{obj['name']}\033[39m | Type: {obj['type']} | Distance: \033[31m{obj['distance_from_earth']}\033[39m")
+    # print(obj)
