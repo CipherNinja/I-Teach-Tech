@@ -103,4 +103,5 @@ book_titles = [
     "   the road "
 ]
 
+# We focus more on problem solving | here is working code you can modify it and print according to your LOU.
 normalize_book_title = [print(" ".join(meta.title() for meta in title)) for title in map(lambda books:books.split(),book_titles)]
