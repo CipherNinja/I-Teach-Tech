@@ -10,8 +10,8 @@ Welcome to the **Advanced Python** folder in the **I-Teach-Tech** repository! In
 ### 2. **Dictionary Comprehensions**
    - Learn how to create dictionaries in a readable, efficient way using comprehensions.
 
-### 3. **Tuple Packing & Unpacking**
-   - Understand how to use tuples effectively with packing and unpacking techniques.
+### 3. **Datatype Packing & Unpacking**
+   - Understand how to use tuples,Lists,Dicts effectively with packing and unpacking techniques.
 
 ### 4. **Lambda Functions & Higher-Order Functions**
    - Use anonymous functions (lambda) and higher-order functions for more concise code.
