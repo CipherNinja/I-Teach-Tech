@@ -4,22 +4,22 @@ Welcome to the **Advanced Python** folder in the **I-Teach-Tech** repository! In
 
 ## Topics Covered
 
-### 1. **List Comprehensions & Generator Expressions**
+### 1. **List Comprehensions & Generator Expressions** (❁´◡`❁)
    - Write concise and efficient code using comprehensions and generator expressions.
    
-### 2. **Dictionary Comprehensions**
+### 2. **Dictionary Comprehensions** (❁´◡`❁)
    - Learn how to create dictionaries in a readable, efficient way using comprehensions.
 
-### 3. **Datatype Packing & Unpacking**
+### 3. **Datatype Packing & Unpacking** (*/ω＼*)
    - Understand how to use tuples,Lists,Dicts effectively with packing and unpacking techniques.
 
-### 4. **Lambda Functions & Higher-Order Functions**
+### 4. **Lambda Functions & Higher-Order Functions** (❁´◡`❁)
    - Use anonymous functions (lambda) and higher-order functions for more concise code.
 
-### 5. **Decorators & Function Wrapping**
+### 5. **Decorators & Function Wrapping** (❁´◡`❁)
    - Explore the powerful decorator pattern for modifying functions.
 
-### 6. **Iterators and Iterables**
+### 6. **Iterators and Iterables** (┬┬﹏┬┬)
    - Work with iterators and create custom iterable objects in Python.
 
 ### 7. **Context Managers (`with` statement)**

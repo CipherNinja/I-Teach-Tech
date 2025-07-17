@@ -16,7 +16,6 @@ If the function keeps failing, return a message like "Maximum retries reached. R
 '''
 import random
 
-
 def retry_on_fail(max_retries=3):
     def decorator(func):
         def wrapper(*args, **kwargs):
