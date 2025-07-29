@@ -56,7 +56,7 @@ class DataCleaner:
             writer.writerow(self.headers)  # Write headers
             writer.writerows(self.clean_data())
 
-with open(r"C:\Users\Priyesh Pandey\OneDrive\Desktop\tech-training\DataScience\assignment_1\src\dataset\student_response.csv", mode="r") as file:
+with open(r"C:\Users\Priyesh Pandey\OneDrive\Desktop\I-Teach-Tech\Advance-Python\DataScienceWithPython\assignment_1\src\dataset\student_response.csv", mode="r") as file:
     data = csv.reader(file)
     cleaner = DataCleaner(data)
-    cleaner.save_cleaned_data(r"C:\Users\Priyesh Pandey\OneDrive\Desktop\tech-training\DataScience\assignment_1\src\dataset\step_2_cleaned_data.csv")
+    cleaner.save_cleaned_data(r"C:\Users\Priyesh Pandey\OneDrive\Desktop\I-Teach-Tech\Advance-Python\DataScienceWithPython\assignment_1\src\dataset\step_2_cleaned_data.csv")

@@ -97,51 +97,50 @@ class DataAnalyzer:
     def find_best_performers(self):
         males, females = self.analyze_gender()
         all_rows = males + females
-        best_performers = []
+        all_performers = []
 
         for row in all_rows:
             score = self.evaluate_performance(row)
-            if score >= 8:  # Threshold for "best" performance (out of 10)
-                best_performers.append(row + [score])
+            all_performers.append(row + [round(score, 2)])  # Rounded for readability
 
         # Sort by performance score in descending order
-        best_performers.sort(key=lambda x: x[-1], reverse=True)
+        all_performers.sort(key=lambda x: x[-1], reverse=True)
 
-        print("\nBest Performers (Score >= 8):")
-        print(f"Total Best Performers: {len(best_performers)}")
-        if best_performers:
-            print("\nTop 4 Best Performers:")
-            # Define column names explicitly
-            df_columns = [
-                "Timestamp",
-                "What is your age?",
-                "What is your gender?",
-                "What is your current level of education?",
-                "What is your average grade or GPA? (Enter % or GPA)",
-                "How many hours do you sleep per night (on average)?",
-                "How many hours per day do you study (outside of class)?",
-                "How many hours per day do you spend on screens (non-academic)?",
-                "How often do you engage in physical activity?",
-                "How would you rate your diet/nutrition?",
-                "How often do you use social media?",
-                "Do you participate in extracurricular activities?",
-                "How would you rate your current stress or mental health level?",
-                "Performance Score"
-            ]
-            
-            df_data = [row for row in best_performers[:4]]  # Take top 4
-            
-            for row in df_data:
-                if len(row) != 14:
-                    print(f"Warning: Row has {len(row)} columns instead of 14: {row}")
-            df = pd.DataFrame(df_data, columns=df_columns)
-            df.index = range(1, min(len(df_data) + 1, 5))
-            df.index.name = "Student"
-            print(df)
-            output_path = r"C:\Users\Priyesh Pandey\OneDrive\Desktop\tech-training\DataScience\assignment_1\src\dataset\best_performers.csv"
-            df.to_csv(output_path)
+        print(f"\nPerformance scores assigned to all {len(all_performers)} students.")
 
-with open(r"C:\Users\Priyesh Pandey\OneDrive\Desktop\tech-training\DataScience\assignment_1\src\dataset\step_2_cleaned_data.csv", mode="r") as file:
+        # Define column names explicitly
+        df_columns = [
+            "Timestamp",
+            "age?",
+            "gender?",
+            "education?",
+            "GPA?",
+            "sleep",
+            "study",
+            "screens",
+            "activity?",
+            "diet?",
+            "social?",
+            "activities?",
+            "mentalH?",
+            "Performance"
+        ]
+
+        df = pd.DataFrame(all_performers, columns=df_columns)
+        df.index = range(1, len(df) + 1)
+        df.index.name = "Student"
+
+        # Print top 5 rows
+        print("\nTop 5 Performers:")
+        print(df.head())
+
+        # Save all performers
+        output_path = r"C:\Users\Priyesh Pandey\OneDrive\Desktop\I-Teach-Tech\Advance-Python\DataScienceWithPython\assignment_1\src\dataset\all_performance_scores.csv"
+        df.to_csv(output_path)
+        print(f"\nFull performance score data saved to:\n{output_path}")
+
+
+with open(r"C:\Users\Priyesh Pandey\OneDrive\Desktop\I-Teach-Tech\Advance-Python\DataScienceWithPython\assignment_1\src\dataset\step_2_cleaned_data.csv", mode="r") as file:
     data = csv.reader(file)
     analyzer = DataAnalyzer(data)
     analyzer.find_best_performers()

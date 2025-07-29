@@ -44,7 +44,7 @@ class Exploration:
         for col, count in self.null_values.items():
             print(f"{col}: {count} null values")
 
-with open(r"C:\Users\Priyesh Pandey\OneDrive\Desktop\tech-training\DataScience\assignment_1\src\dataset\student_response.csv", mode="r") as file:
+with open(r"C:\Users\Priyesh Pandey\OneDrive\Desktop\I-Teach-Tech\Advance-Python\DataScienceWithPython\assignment_1\src\dataset\student_response.csv", mode="r") as file:
     data = csv.reader(file)
     explorer = Exploration(data)
     explorer.explore_dataset()
