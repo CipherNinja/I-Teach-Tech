@@ -12,6 +12,4 @@ users = [
 ]
 
 # Task: Filter users who are active and have at least 3 activities
-ls=[1,2,3,4,6]
-filter_users = [usr for usr in filter(lambda x:x['status']=="active" and len(x["activities"])>=3,users)]
-print(filter_users)
+filtered_users = [print(usr) for usr in filter(lambda usr_data: usr_data['status'] == 'active' and len(usr_data['activities'])>=3,users)]
