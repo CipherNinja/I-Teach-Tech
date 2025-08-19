@@ -9,6 +9,8 @@ array = N.array(
         [5,6,7,8,9],
     ]
 )
+# matrix multiplication
+# print(array @ array.T)
 
 array_2 = N.array([
     [2],[3],[4],[5],[6]
