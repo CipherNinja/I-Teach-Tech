@@ -4,23 +4,23 @@ import pika
 init(autoreset=True)
 
 def connect_to_rabbitmq():
-    print(Fore.CYAN + "🔌 Connecting to RabbitMQ...")
+    print("🔌 Connecting to RabbitMQ...")
     connection = pika.BlockingConnection(pika.ConnectionParameters('localhost'))
     channel = connection.channel()
     return connection, channel
 
 def declare_queue(channel, queue_name='task_queue'):
-    print(Fore.YELLOW + f"📦 Ensuring queue exists: {queue_name}")
+    print(f"📦 Ensuring queue exists: {queue_name}")
     channel.queue_declare(queue=queue_name, durable=True)
 
 def process_task(ch, method, properties, body):
     task = body.decode()
-    print(Fore.GREEN + f"📥 Received task: {task}")
+    print(f"📥 Received task: {task}")
     # Optional: Add keyword flagging or save to file here
     ch.basic_ack(delivery_tag=method.delivery_tag)
 
 def start_consumer(channel, queue_name='task_queue'):
-    print(Fore.MAGENTA + "🔄 Waiting for tasks. Press CTRL+C to exit.")
+    print("🔄 Waiting for tasks. Press CTRL+C to exit.")
     channel.basic_qos(prefetch_count=1)
     channel.basic_consume(queue=queue_name, on_message_callback=process_task)
     channel.start_consuming()
@@ -31,13 +31,13 @@ def main():
         declare_queue(channel)
         start_consumer(channel)
     except KeyboardInterrupt:
-        print(Fore.RED + "\n🛑 Interrupted by user.")
+        print("\n🛑 Interrupted by user.")
     except Exception as e:
-        print(Fore.RED + f"❌ Error: {e}")
+        print(f"❌ Error: {e}")
     finally:
         try:
             connection.close()
-            print(Fore.CYAN + "🔒 Connection closed.")
+            print("🔒 Connection closed.")
         except:
             pass
 
